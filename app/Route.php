@@ -2,19 +2,24 @@
 
 namespace App;
 
-class Route extends \Klein\Klein
+use \App\Libs\Twig as Twig;
+use \Klein\Klein as Klein;
+
+class Route
 {
     private $twig;
+    private $route;
 
     /**
      * Instance class twig, create routes && verify if fails and dispatch
      */
     public function ready()
     {
-        $this->twig = new Libs\Twig();
+        $this->twig = new Twig();
+        $this->route = new Klein();
         $this->routing();
         $this->fails();
-        $this->dispatch();
+        $this->route->dispatch();
     }
 
     /**
@@ -22,17 +27,8 @@ class Route extends \Klein\Klein
      */
     public function routing()
     {
-        $this->respond('GET', '/', function () {
-            $teste = new \App\Controllers\NoticeController();
-            $file = 'index.tpl.html';
-            $this->twig->render($file);
-        });
-
-        $this->respond('GET', '/teste/[a:name]', function ($request) {
-            $controller = new \App\Controllers\NoticeController();
-            $file = 'index2.tpl.html';
-            $response = $controller->teste($request->name);
-            $this->twig->render($file, $response);
+        $this->route->respond('GET', '/', function() {
+            $this->twig->render('index.tpl.html');
         });
     }
 
@@ -41,7 +37,7 @@ class Route extends \Klein\Klein
      */
     public function fails()
     {
-        $this->onHttpError(function ($code, $router) {
+        $this->route->onHttpError(function ($code, $router) {
             switch ($code) {
                 case 404:
                     $router->response()->body(

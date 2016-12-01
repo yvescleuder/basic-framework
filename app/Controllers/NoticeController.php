@@ -16,21 +16,4 @@ class NoticeController extends Controller
 		parent::__construct();
 		$this->notice = new Notice();
 	}
-
-	public function getAll()
-	{
-		return $this->notice->getAll();
-	}
-
-    public function teste($name)
-    {
-        return [
-            "nome_usuario" => $name,
-        ];
-    }
-
-    public function teste2()
-    {
-        echo 'asasasa';
-    }
 }

@@ -11,9 +11,4 @@ class Notice extends Model
 	{
 		parent::__construct();
 	}
-
-	public function getAll()
-	{
-        return 1;
-	}
 }

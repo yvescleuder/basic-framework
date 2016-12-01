@@ -13,8 +13,11 @@ class Twig
     function __construct()
     {
         $this->loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../resources/views');
-        $this->twig = new \Twig_Environment($this->loader, []);
+        $this->twig = new \Twig_Environment($this->loader, [
+            "debug" => true,
+        ]);
         $this->twig->addExtension(new TwigExtension());
+        $this->twig->addExtension(new \Twig_Extension_Debug());
     }
 
     /**
