@@ -37,21 +37,21 @@ class Route
      */
     public function fails()
     {
-        $this->route->onHttpError(function ($code, $router) {
-            switch ($code) {
+        $this->route->onHttpError(function($code, $router) {
+            switch($code) {
                 case 404:
                     $router->response()->body(
-                        $this->twig->render('error404.tpl.html')
+                        $this->twig->render('/errors/error404.tpl.html')
                     );
                     break;
                 case 405:
                     $router->response()->body(
-                        'You can\'t do that!'
+                        $this->twig->render('/errors/error405.tpl.html')
                     );
                     break;
                 default:
                     $router->response()->body(
-                        'Oh no, a bad error happened that caused a '. $code
+                        $this->twig->render('/errors/default.tpl.html', '["code" => $code]')
                     );
             }
         });
