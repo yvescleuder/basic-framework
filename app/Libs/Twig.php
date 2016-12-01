@@ -15,6 +15,7 @@ class Twig
         $this->loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../resources/views');
         $this->twig = new \Twig_Environment($this->loader, [
             "debug" => true,
+            "cache" => __DIR__ . '/../../resources/cache/views'
         ]);
         $this->twig->addExtension(new TwigExtension());
         $this->twig->addExtension(new \Twig_Extension_Debug());
@@ -22,10 +23,10 @@ class Twig
 
     /**
      * Generates the view for the user
-     * @param String $file
+     * @param String|null $file
      * @param array $data
      */
-    public function render(String $file, Array $data = [])
+    public function render(String $file = null, Array $data = [])
     {
         echo $this->twig->render($file, $data);
     }
