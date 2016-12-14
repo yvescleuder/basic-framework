@@ -34,7 +34,13 @@ Desenvolvendo um framework básico para aplicações pequeno e meio porte
     });
 - Para mais informações acesse a dependencia do klein.php
 
-7) Em breve sistema de linguagem para o front-end através da URL e o back-end aproveitando um pouco do recurso já desenvolvimento no front-end.
+7) Sistema de Linguagem
+- Os arquivos de linguagens estão dentro de "resources/lang".
+- Para efetuar a troca de uma linguagem basta coloca a variável changelang na URL com o nome do arquivo de linguagem.
+    Exemplo: ?changelang=ptbr
+    Dentro de "resource/lang" existe um arquivo chamado ptbr.php
+- Para chamar na view basta acessar pelo template {{ lang.POSICAO }}
+    Exemplo: {{ lang.TITLE }}
 
 Dependencias
 - Medoo (Banco de dados - http://www.medoo.in)
