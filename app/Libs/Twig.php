@@ -23,10 +23,10 @@ class Twig
 
     /**
      * Generates the view for the user
-     * @param String|null $file
+     * @param string $file
      * @param array $data
      */
-    public function render(String $file = null, Array $data = [])
+    public function render(string $file, array $data = [])
     {
         echo $this->twig->render($file, $data);
     }

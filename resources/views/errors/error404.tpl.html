@@ -1,24 +1,8 @@
 {% extends "template.tpl.html" %}
 
-{% block title %}Página não encontrada - L2 Kael{% endblock %}
+{% block title %}{{ lang.TITLE_404}}{% endblock %}
 
 {% block content %}
-<section class="content-wrap full youplay-404">
-    <!-- Banner -->
-    <div class="youplay-banner banner-top">
-        <div class="image" style="background-image: url('images/game-dark-souls-ii-10-1680x1050.jpg')">
-        </div>
-
-        <div class="info">
-            <div>
-                <div class="container align-center">
-                    <h2 class="h1">404</h2>
-                    <h3>Ops.. Página não encontrada, tem certeza que o link está correto?!?</h3>
-                    <button class="btn btn-lg" href="javascript:;" onclick="javascript:history.back()">Voltar a página anterior</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /Banner -->
-</section>
+    <h3>{{ lang.TITLE_404}}</h3>
+<button class="btn btn-lg" href="javascript:;" onclick="javascript:history.back()">{{ lang.BACK }}</button>
 {% endblock %}

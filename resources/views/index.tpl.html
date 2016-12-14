@@ -1,45 +1,14 @@
 {% extends "template.tpl.html" %}
 
-{% block title %}L2 Kael - Informações do servidor{% endblock %}
+{# Pode utilizar o lang.TITLE aqui ou lá dentro do próprio template.tpl.html #}
+{% block title %}{{ lang.TITLE }}{% endblock %}
 
 {% block content %}
-<section class="content-wrap full">
-    <!-- Preorder -->
-    <section class="youplay-banner">
-        <div class="image" style="background-image: url('images/wallpaper-open.jpg');">
-        </div>
-
-        <div class="info container align-center">
-            <div>
-                <img src="images/logo-witcher-3-400x197.png" alt="">
-                <br>
-                <br>
-                <!-- See countdown init in bottom of the page -->
-                <div class="countdown h2" data-end="2016-12-20 15:00" data-timezone="America/Sao_Paulo"></div>
-                <br>
-                <br>
-                <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#informacoes">Informações</button>
-            </div>
-        </div>
-    </section>
-    <!-- /Preorder -->
-</section>
-
-<div id="informacoes" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Informações</h4>
-            </div>
-            <div class="modal-body">
-                <p>informação aqui<br>sasasasasaas.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
+    Conteudo aqui dentro
+    Título: {{ lang.TITLE }}
+    <br />
+    Alterando a linguagem<br />
+    Português -> <a href="?changelang=ptbr">aqui</a><br />
+    Espanhol -> <a href="?changelang=es">aqui</a><br />
+    Inglês -> <a href="?changelang=en">aqui</a><br />
 {% endblock %}

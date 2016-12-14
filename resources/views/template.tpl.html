@@ -7,97 +7,10 @@
     <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Icon -->
-    <link rel="icon" type="image/png" href="/images/icon.png">
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css" />
-    <!-- Youplay -->
-    <link rel="stylesheet" type="text/css" href="/youplay/css/youplay.min.css" />
-    <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-    <!-- RTL (uncomment this to enable RTL support) -->
-    <!-- <link rel="stylesheet" type="text/css" href="/youplay/css/youplay-rtl.css" /> -->
 </head>
 <body>
-
-<!-- Preloader -->
-<div class="page-preloader preloader-wrapp">
-    <img src="/images/logo.png" alt="">
-    <div class="preloader"></div>
-</div>
-<!-- /Preloader -->
-
 <!-- Main Content -->
 {% block content %}{% endblock %}
 <!-- /Main Content -->
-
-<!-- jQuery -->
-<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Hexagon Progress -->
-<script type="text/javascript" src="/plugins/HexagonProgress/jquery.hexagonprogress.min.js"></script>
-<!-- Bootstrap -->
-<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Jarallax -->
-<script type="text/javascript" src="/bower_components/jarallax/dist/jarallax.min.js"></script>
-<!-- Smooth Scroll -->
-<script type="text/javascript" src="/bower_components/smoothscroll-for-websites/SmoothScroll.js"></script>
-<!-- Countdown -->
-<script type="text/javascript" src="/bower_components/jquery.countdown/dist/jquery.countdown.min.js"></script>
-<!-- Moment.js -->
-<script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
-<script type="text/javascript" src="/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
-<!-- Youplay -->
-<script type="text/javascript" src="/youplay/js/youplay.min.js"></script>
-
-<!-- init youplay -->
-<script>
-    if(typeof youplay !== 'undefined') {
-        youplay.init({
-            // enable parallax
-            parallax:         true,
-
-            // set small navbar on load
-            navbarSmall:      false,
-
-            // enable fade effect between pages
-            fadeBetweenPages: true
-        });
-    }
-</script>
-
-<script type="text/javascript">
-    $(".countdown").each(function() {
-        var tz = $(this).attr('data-timezone');
-        var end = $(this).attr('data-end');
-        end = moment.tz(end, tz).toDate();
-        $(this).countdown(end, function(event) {
-            $(this).html(
-                event.strftime([
-                    '<div class="countdown-item">',
-                    '<span>Days</span>',
-                    '<span><span>%D</span></span>',
-                    '</div>',
-                    '<div class="countdown-item">',
-                    '<span>Hours</span>',
-                    '<span><span>%H</span></span>',
-                    '</div>',
-                    '<div class="countdown-item">',
-                    '<span>Minutes</span>',
-                    '<span><span>%M</span></span>',
-                    '</div>',
-                    '<div class="countdown-item">',
-                    '<span>Seconds</span>',
-                    '<span><span>%S</span></span>',
-                    '</div>'
-                ].join(''))
-            );
-        });
-    })
-</script>
 </body>
 </html>
