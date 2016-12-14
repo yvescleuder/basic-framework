@@ -34,6 +34,8 @@ Desenvolvendo um framework básico para aplicações pequeno e meio porte
     });
 - Para mais informações acesse a dependencia do klein.php
 
+7) Em breve sistema de linguagem para o front-end através da URL e o back-end aproveitando um pouco do recurso já desenvolvimento no front-end.
+
 Dependencias
 - Medoo (Banco de dados - http://www.medoo.in)
 - Klein.php (Routes - http://github.com/klein/klein.php)
